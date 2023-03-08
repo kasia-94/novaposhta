@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "novaposhta",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goitacademy.github.io/react-homework-template/",
+  "homepage": "https://kasia-94.github.io/novaposhta/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
