@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const ContainerBox = styled.div`
   margin-left: auto;
   margin-right: auto;
-  width: 280px;
+  width: 290px;
   padding-right: 15px;
   padding-left: 15px;
   outline: 1px solid red;

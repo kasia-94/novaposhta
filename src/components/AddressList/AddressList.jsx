@@ -1,4 +1,8 @@
+import { useEffect } from 'react';
+
 export default function AddressList() {
+  useEffect(() => {});
+
   return (
     <>
       <>Список відділень</>

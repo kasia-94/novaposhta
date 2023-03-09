@@ -1,4 +1,3 @@
-import Container from 'components/Container/Container';
 import Filter from 'components/Filter/Filter';
 import HistoryBox from 'components/HistoryBox/HistoryBox';
 import InfoBox from 'components/InfoBox/InfoBox';
