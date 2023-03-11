@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchStatus } from 'redux/delivery/operations';
 import {
   selectError,
-  selectHistoryList,
   selectIsLoading,
   selectStatus,
 } from 'redux/delivery/selectors';
@@ -17,27 +16,32 @@ export default function Main() {
   const dispatch = useDispatch();
 
   const [status, setStatus] = useState({});
-  const [value, setValue] = useState('');
-  const [historyList, setHistoryList] = useState([]);
+  const [historyList, setHistoryList] = useState(() => {
+    return JSON.parse(window.localStorage.getItem('history')) ?? [];
+  });
+  const [valueHistoryList, setValueHistoryList] = useState('');
 
   const result = useSelector(selectStatus);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
-  // const historyList = useSelector(selectHistoryList);
 
   useEffect(() => {
-    const controller = new AbortController();
+    if (historyList) {
+      localStorage.setItem('history', JSON.stringify(historyList));
+    }
     setStatus(result);
-    return () => controller.abort();
-  }, [result]);
+  }, [historyList, result]);
 
   const handleSubmit = value => {
+    const repeatedNumber = historyList.some(
+      number => number.trim() === value.trim()
+    );
+    if (repeatedNumber) {
+      return Notiflix.Notify.info('Такий номер вже шукали!');
+    }
     dispatch(fetchStatus(value));
     setStatus(result);
-  };
-
-  const addNumber = item => {
-    setHistoryList([...historyList, item]);
+    setHistoryList([...historyList, value]);
   };
 
   const clearList = () => {
@@ -48,6 +52,7 @@ export default function Main() {
   const fetchInfo = value => {
     setStatus('');
     dispatch(fetchStatus(value));
+    setValueHistoryList(value);
   };
 
   return (
@@ -56,8 +61,8 @@ export default function Main() {
       {error && Notiflix.Notify.failure(`${error.message}`)}
       <DeliveryForm
         onSubmit={handleSubmit}
-        addNumber={addNumber}
-        value={value}
+        addNumber={handleSubmit}
+        valueHistoryList={valueHistoryList}
       />
       {status && <InfoBox status={status} />}
       {historyList && (

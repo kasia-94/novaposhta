@@ -8,7 +8,6 @@ const statusSlice = createSlice({
       items: '',
       isLoading: false,
       error: null,
-      list: [],
     },
   },
   extraReducers: {
@@ -19,7 +18,6 @@ const statusSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
-      state.list = action.payload;
     },
     [fetchStatus.rejected](state, action) {
       state.isLoading = false;

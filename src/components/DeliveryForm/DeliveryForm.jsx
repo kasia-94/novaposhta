@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Notiflix from 'notiflix';
 
-export default function DeliveryForm({ onSubmit, addNumber }) {
+export default function DeliveryForm({
+  onSubmit,
+  addNumber,
+  valueHistoryList,
+}) {
   const [inputNumber, setInputNumber] = useState('');
+
+  useEffect(() => {
+    setInputNumber(valueHistoryList);
+  }, [valueHistoryList]);
 
   const handleChange = e => {
     setInputNumber(e.target.value);
