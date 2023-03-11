@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import Notiflix from 'notiflix';
 
-export default function DeliveryForm({ onSubmit }) {
+export default function DeliveryForm({ onSubmit, addNumber }) {
   const [inputNumber, setInputNumber] = useState('');
 
   const handleChange = e => {
     setInputNumber(e.target.value);
-  };
-
-  const reset = () => {
-    setInputNumber('');
   };
 
   const handleSubmit = e => {
@@ -23,7 +19,7 @@ export default function DeliveryForm({ onSubmit }) {
     }
 
     onSubmit(inputNumber);
-    reset();
+    addNumber(inputNumber);
   };
 
   return (

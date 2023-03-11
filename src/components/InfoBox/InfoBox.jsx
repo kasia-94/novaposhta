@@ -4,35 +4,35 @@ export default function InfoBox({ status }) {
       {status.Status ? (
         <p>Статус доставки: {status.Status}</p>
       ) : (
-        <>Інформація відсутня</>
+        <p>Статус доставки: Інформація відсутня</p>
       )}
       {status.WarehouseSender ? (
         <p>
-          Відправлено:<>{status.WarehouseSender}</>
+          Відправлено: <>{status.WarehouseSender}</>
         </p>
       ) : (
-        <>Інформація відсутня</>
+        <p>Відправлено: Інформація відсутня</p>
       )}
       {status.DateCreated ? (
         <p>
           Дата відправки:<>{status.DateCreated}</>
         </p>
       ) : (
-        <>Інформація відсутня</>
+        <p>Дата відправки: Інформація відсутня</p>
       )}
       {status.WarehouseRecipient ? (
         <p>
           Отримано: <>{status.WarehouseRecipient}</>
         </p>
       ) : (
-        <>Інформація відсутня</>
+        <p>Отримано: Інформація відсутня</p>
       )}
       {status.RecipientDateTime ? (
         <p>
           Дата отримання:<>{status.RecipientDateTime}</>
         </p>
       ) : (
-        <>Інформація відсутня</>
+        <p>Дата отримання: Інформація відсутня</p>
       )}
     </>
   );
