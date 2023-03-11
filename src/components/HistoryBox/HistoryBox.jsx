@@ -1,11 +1,15 @@
-export default function HistoryBox() {
+export default function HistoryBox({ listDelivery }) {
   return (
     <>
       <>Історія</>
       <ul>
-        <li>5962</li>
-        <li>5464</li>
-        <li>6116</li>
+        {listDelivery.map(item => {
+          return (
+            <li>
+              <button></button>
+            </li>
+          );
+        })}
       </ul>
     </>
   );

@@ -8,6 +8,7 @@ const addressSlice = createSlice({
     isLoadind: false,
     error: null,
   },
+
   extraReducers: {
     [fetchAddress.pending](state) {
       state.isLoading = true;
