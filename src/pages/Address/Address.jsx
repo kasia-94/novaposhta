@@ -27,6 +27,12 @@ export default function Address() {
     return () => controller.abort();
   }, [result]);
 
+  useEffect(() => {
+    const controller = new AbortController();
+    setAddress([]);
+    return () => controller.abort();
+  }, []);
+
   const onSubmit = cityInput => {
     setAddress([]);
     const optimizedCity = cityInput.trim().toLowerCase();
@@ -45,8 +51,12 @@ export default function Address() {
     <>
       {isLoading && <Loader />}
       {error && Notiflix.Notify.failure(`${error.message}`)}
-      <AddressForm onSubmit={onSubmit} />
-      <AddressList address={address} cityInput={cityInput} />
+      {!isLoading && (
+        <>
+          <AddressForm onSubmit={onSubmit} />
+          <AddressList address={address} cityInput={cityInput} />
+        </>
+      )}
     </>
   );
 }

@@ -1,39 +1,74 @@
+import { Box, CardBox, Text, Title } from './InfoBox.styled';
+
 export default function InfoBox({ status }) {
   return (
-    <>
-      {status.Status ? (
-        <p>Статус доставки: {status.Status}</p>
+    <CardBox>
+      {status.Number ? (
+        <Box>
+          <Title>Номер ТТН:</Title>
+          <Text>{status.Number}</Text>
+        </Box>
       ) : (
-        <p>Статус доставки: Інформація відсутня</p>
+        <Box>
+          <Title>Статус доставки:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
+      )}
+      {status.Status ? (
+        <Box>
+          <Title>Статус доставки:</Title>
+          <Text>{status.Status}</Text>
+        </Box>
+      ) : (
+        <Box>
+          <Title>Статус доставки:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
       )}
       {status.WarehouseSender ? (
-        <p>
-          Відправлено: <>{status.WarehouseSender}</>
-        </p>
+        <Box>
+          <Title>Відправлено:</Title>
+          <Text>{status.WarehouseSender}</Text>
+        </Box>
       ) : (
-        <p>Відправлено: Інформація відсутня</p>
+        <Box>
+          <Title>Відправлено:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
       )}
       {status.DateCreated ? (
-        <p>
-          Дата відправки:<>{status.DateCreated}</>
-        </p>
+        <Box>
+          <Title>Статус доставки:</Title>
+          <Text>{status.DateCreated}</Text>
+        </Box>
       ) : (
-        <p>Дата відправки: Інформація відсутня</p>
+        <Box>
+          <Title>Статус доставки:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
       )}
       {status.WarehouseRecipient ? (
-        <p>
-          Отримано: <>{status.WarehouseRecipient}</>
-        </p>
+        <Box>
+          <Title>Отримано:</Title>
+          <Text>{status.WarehouseRecipient}</Text>
+        </Box>
       ) : (
-        <p>Отримано: Інформація відсутня</p>
+        <Box>
+          <Title>Отримано:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
       )}
       {status.RecipientDateTime ? (
-        <p>
-          Дата отримання:<>{status.RecipientDateTime}</>
-        </p>
+        <Box>
+          <Title>Дата отримання:</Title>
+          <Text>{status.RecipientDateTime}</Text>
+        </Box>
       ) : (
-        <p>Дата отримання: Інформація відсутня</p>
+        <Box>
+          <Title>Дата отримання:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
       )}
-    </>
+    </CardBox>
   );
 }

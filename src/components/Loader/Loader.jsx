@@ -1,18 +1,19 @@
-import { Triangle } from 'react-loader-spinner';
-import { TriangleContainer } from './Loader.styled';
+import { ThreeDots } from 'react-loader-spinner';
+import { Container } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <TriangleContainer>
-      <Triangle
-        height="100"
-        width="100"
-        color="#404b27eb"
-        ariaLabel="triangle-loading"
+    <Container>
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="red"
+        ariaLabel="three-dots-loading"
         wrapperStyle={{}}
         wrapperClassName=""
         visible={true}
       />
-    </TriangleContainer>
+    </Container>
   );
 };
