@@ -54,7 +54,7 @@ export default function Address() {
 
   const lastDepartmentIndex = currentPage * itemsPerPage;
   const firstDepartmentIndex = lastDepartmentIndex - itemsPerPage;
-  const currentDepartments = address.slice(
+  const currentAddress = address.slice(
     firstDepartmentIndex,
     lastDepartmentIndex
   );
@@ -70,7 +70,7 @@ export default function Address() {
       {!isLoading && (
         <>
           <AddressForm onSubmit={onSubmit} />
-          <AddressList address={currentDepartments} cityInput={cityInput} />
+          <AddressList address={currentAddress} cityInput={cityInput} />
           <PagBox>
             <PaginationComponent
               address={address.length}
