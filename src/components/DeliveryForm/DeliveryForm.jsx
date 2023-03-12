@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Notiflix from 'notiflix';
-import { ButtonSubmit, Container } from './DeliveryForm.styled';
-import { TextField } from '@mui/material';
+import { ButtonSubmit, Container, Input } from './DeliveryForm.styled';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 export default function DeliveryForm({ onSubmit, valueHistoryList }) {
@@ -30,7 +29,7 @@ export default function DeliveryForm({ onSubmit, valueHistoryList }) {
   return (
     <Container>
       <form onSubmit={handleSubmit}>
-        <TextField
+        <Input
           variant="outlined"
           color="error"
           type="text"
