@@ -10,12 +10,16 @@ import {
 } from 'redux/address/selectors';
 import Notiflix from 'notiflix';
 import { Loader } from 'components/Loader/Loader';
+import { PaginationComponent } from 'components/Pagination/Pagination';
+import { PagBox } from './Address.styled';
 
 export default function Address() {
   const dispatch = useDispatch();
 
   const [cityInput, setCityInput] = useState('');
   const [address, setAddress] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(20);
 
   const result = useSelector(selectAllAddress);
   const isLoading = useSelector(selectIsLoading);
@@ -45,6 +49,18 @@ export default function Address() {
 
     dispatch(fetchAddress(optimizedCity));
     setCityInput(optimizedCity);
+    setCurrentPage(1);
+  };
+
+  const lastDepartmentIndex = currentPage * itemsPerPage;
+  const firstDepartmentIndex = lastDepartmentIndex - itemsPerPage;
+  const currentDepartments = address.slice(
+    firstDepartmentIndex,
+    lastDepartmentIndex
+  );
+
+  const paginate = (_, pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -54,7 +70,15 @@ export default function Address() {
       {!isLoading && (
         <>
           <AddressForm onSubmit={onSubmit} />
-          <AddressList address={address} cityInput={cityInput} />
+          <AddressList address={currentDepartments} cityInput={cityInput} />
+          <PagBox>
+            <PaginationComponent
+              address={address.length}
+              itemsPerPage={itemsPerPage}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
+          </PagBox>
         </>
       )}
     </>
