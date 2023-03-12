@@ -11,3 +11,8 @@ export const Container = styled.div`
 export const ButtonSubmit = styled(Button)`
   height: 56px;
 `;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: row;
+`;

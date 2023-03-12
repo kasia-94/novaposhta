@@ -17,3 +17,8 @@ export const ButtonSubmit = styled(Button)`
 export const Input = styled(TextField)`
   width: 210px;
 `;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: row;
+`;
