@@ -15,5 +15,5 @@ export const ButtonSubmit = styled(Button)`
 `;
 
 export const Input = styled(TextField)`
-  width: 210px;
+  width: 220px;
 `;
