@@ -39,6 +39,7 @@ export default function DeliveryForm({ onSubmit, valueHistoryList }) {
           onChange={handleChange}
           label="Введіть 14-значний номер ТТН"
           pattern="[0-9]{14}"
+          focused
         />
         <ButtonSubmit variant="contained" type="submit" color="error">
           {<SearchTwoToneIcon />}
