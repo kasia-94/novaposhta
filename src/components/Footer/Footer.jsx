@@ -13,7 +13,9 @@ export default function Footer() {
 
           <Image src={logo} alt="logo" />
 
-          <Text>ЦЕНТР ПІДТРИМКИ КЛІЄНТІВ +38 098 4 500 609</Text>
+          <Text>
+            <p>ЦЕНТР ПІДТРИМКИ КЛІЄНТІВ</p> <p>+38 098 4 500 609</p>
+          </Text>
         </LinkBox>
       </AppBar>
     </Box>

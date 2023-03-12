@@ -25,6 +25,8 @@ export const LinkItem = styled(Link)`
 `;
 
 export const Text = styled.p`
+  display: flex;
+  flex-direction: column;
   margin-left: 5px;
   margin-top: 0;
   margin-bottom: 0;
