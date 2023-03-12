@@ -1,9 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import { LinkItem, LinkBox, Text, Image } from './Footer.styled';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PendingActionsIcon from '@mui/icons-material/PendingActions';
+import { LinkBox, Text, Image } from './Footer.styled';
 import logo from '../../images/98904a4b933ef83d47069817326c5a1c.png';
 
 export default function Footer() {
