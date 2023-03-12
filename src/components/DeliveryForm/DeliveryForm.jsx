@@ -3,7 +3,6 @@ import Notiflix from 'notiflix';
 import { ButtonSubmit, Container } from './DeliveryForm.styled';
 import { TextField } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
-import { Form } from 'react-router-dom';
 
 export default function DeliveryForm({ onSubmit, valueHistoryList }) {
   const [inputNumber, setInputNumber] = useState('');
@@ -30,7 +29,7 @@ export default function DeliveryForm({ onSubmit, valueHistoryList }) {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <TextField
           variant="outlined"
           color="error"
@@ -45,7 +44,7 @@ export default function DeliveryForm({ onSubmit, valueHistoryList }) {
         <ButtonSubmit variant="contained" type="submit" color="error">
           {<SearchTwoToneIcon />}
         </ButtonSubmit>
-      </Form>
+      </form>
     </Container>
   );
 }

@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { ButtonSubmit, Container, Input } from './AddressForm.styled';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
-import { Form } from 'react-router-dom';
 
 export default function AddressForm({ onSubmit }) {
   const [city, setCity] = useState('');
@@ -23,7 +22,7 @@ export default function AddressForm({ onSubmit }) {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <Input
           variant="outlined"
           color="error"
@@ -36,7 +35,7 @@ export default function AddressForm({ onSubmit }) {
         <ButtonSubmit variant="contained" type="submit" color="error">
           {<SearchTwoToneIcon />}
         </ButtonSubmit>
-      </Form>
+      </form>
     </Container>
   );
 }
