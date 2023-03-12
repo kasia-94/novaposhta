@@ -1,4 +1,5 @@
 import Container from 'components/Container/Container';
+import Footer from 'components/Footer/Footer';
 import { Loader } from 'components/Loader/Loader';
 import Menu from 'components/Menu/Menu';
 import Address from 'pages/Address/Address';
@@ -19,6 +20,7 @@ export const App = () => {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Container>
+        <Footer />
       </Suspense>
     </>
   );
