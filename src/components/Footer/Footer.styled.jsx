@@ -37,3 +37,9 @@ export const Image = styled.img`
   margin-left: 5px;
   margin-right: 5px;
 `;
+
+export const Title = styled.p`
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+`;
