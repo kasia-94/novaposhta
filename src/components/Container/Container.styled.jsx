@@ -8,6 +8,7 @@ export const ContainerBox = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 738px;
+    min-height: 625px;
   }
   @media screen and (min-width: 1200px) {
     width: 1170px;
