@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: row;
   margin-top: 20px;
   margin-bottom: 20px;
 `;
