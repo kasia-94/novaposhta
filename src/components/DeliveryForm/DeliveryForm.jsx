@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import Notiflix from 'notiflix';
+import { ButtonSubmit, Container } from './DeliveryForm.styled';
+import { TextField } from '@mui/material';
+import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 export default function DeliveryForm({ onSubmit, valueHistoryList }) {
   const [inputNumber, setInputNumber] = useState('');
@@ -25,9 +28,11 @@ export default function DeliveryForm({ onSubmit, valueHistoryList }) {
   };
 
   return (
-    <>
+    <Container>
       <form onSubmit={handleSubmit}>
-        <input
+        <TextField
+          variant="outlined"
+          color="error"
           type="text"
           name="inputNumber"
           value={inputNumber}
@@ -35,8 +40,10 @@ export default function DeliveryForm({ onSubmit, valueHistoryList }) {
           label="Введіть 14-значний номер ТТН"
           pattern="[0-9]{14}"
         />
-        <button type="submit">Отримати</button>
+        <ButtonSubmit variant="contained" type="submit" color="error">
+          {<SearchTwoToneIcon />}
+        </ButtonSubmit>
       </form>
-    </>
+    </Container>
   );
 }

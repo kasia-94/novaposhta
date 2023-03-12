@@ -11,6 +11,7 @@ import {
   selectStatus,
 } from 'redux/delivery/selectors';
 import DeliveryForm from 'components/DeliveryForm/DeliveryForm';
+import { MainBox } from './Main.styled';
 
 export default function Main() {
   const dispatch = useDispatch();
@@ -63,14 +64,16 @@ export default function Main() {
         onSubmit={handleSubmit}
         valueHistoryList={valueHistoryList}
       />
-      {status && <InfoBox status={status} />}
-      {historyList && (
-        <HistoryBox
-          historyList={historyList}
-          clearList={clearList}
-          fetchInfo={fetchInfo}
-        />
-      )}
+      <MainBox>
+        {status && <InfoBox status={status} />}
+        {historyList && (
+          <HistoryBox
+            historyList={historyList}
+            clearList={clearList}
+            fetchInfo={fetchInfo}
+          />
+        )}
+      </MainBox>
     </>
   );
 }

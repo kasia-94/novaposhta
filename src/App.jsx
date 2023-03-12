@@ -1,4 +1,5 @@
 import Container from 'components/Container/Container';
+import { Loader } from 'components/Loader/Loader';
 import Menu from 'components/Menu/Menu';
 import Address from 'pages/Address/Address';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
@@ -9,9 +10,9 @@ import Main from './pages/Main/Main';
 export const App = () => {
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<Loader />}>
+        <Menu />
         <Container>
-          <Menu />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/address" element={<Address />} />
