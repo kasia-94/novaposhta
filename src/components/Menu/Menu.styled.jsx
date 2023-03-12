@@ -29,3 +29,9 @@ export const Text = styled.p`
   margin-top: 0;
   margin-bottom: 0;
 `;
+
+export const Image = styled.img`
+  width: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+`;

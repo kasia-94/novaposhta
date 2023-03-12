@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import { ButtonSubmit, Container } from './AddressForm.styled';
+
+import { ButtonSubmit, Container, Input } from './AddressForm.styled';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 export default function AddressForm({ onSubmit }) {
@@ -23,13 +23,14 @@ export default function AddressForm({ onSubmit }) {
   return (
     <Container>
       <form onSubmit={handleSubmit}>
-        <TextField
+        <Input
           variant="outlined"
           color="error"
           name="string"
           value={city}
           onChange={handleChange}
           label="Введіть назву населеного пункту"
+          focused
         />
         <ButtonSubmit variant="contained" type="submit" color="error">
           {<SearchTwoToneIcon />}

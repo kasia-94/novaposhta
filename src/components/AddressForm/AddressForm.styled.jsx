@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
 
 export const Container = styled.div`
   display: flex;
@@ -10,4 +11,8 @@ export const Container = styled.div`
 
 export const ButtonSubmit = styled(Button)`
   height: 56px;
+`;
+
+export const Input = styled(TextField)`
+  width: 210px;
 `;

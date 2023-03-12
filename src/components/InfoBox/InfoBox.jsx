@@ -10,7 +10,7 @@ export default function InfoBox({ status }) {
         </Box>
       ) : (
         <Box>
-          <Title>Статус доставки:</Title>
+          <Title>Номер ТТН:</Title>
           <Text>Інформація відсутня</Text>
         </Box>
       )}
@@ -38,12 +38,23 @@ export default function InfoBox({ status }) {
       )}
       {status.DateCreated ? (
         <Box>
-          <Title>Статус доставки:</Title>
+          <Title>Дата відправлення:</Title>
           <Text>{status.DateCreated}</Text>
         </Box>
       ) : (
         <Box>
-          <Title>Статус доставки:</Title>
+          <Title>Дата відправлення:</Title>
+          <Text>Інформація відсутня</Text>
+        </Box>
+      )}
+      {status.ScheduledDeliveryDate ? (
+        <Box>
+          <Title>Дата доставки:</Title>
+          <Text>{status.ScheduledDeliveryDate}</Text>
+        </Box>
+      ) : (
+        <Box>
+          <Title>Дата доставки:</Title>
           <Text>Інформація відсутня</Text>
         </Box>
       )}
