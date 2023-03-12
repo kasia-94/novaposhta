@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import Notiflix from 'notiflix';
 
-export default function DeliveryForm({
-  onSubmit,
-  addNumber,
-  valueHistoryList,
-}) {
+export default function DeliveryForm({ onSubmit, valueHistoryList }) {
   const [inputNumber, setInputNumber] = useState('');
 
   useEffect(() => {
@@ -25,9 +21,7 @@ export default function DeliveryForm({
     if (inputNumber.length < 14 || inputNumber.length > 14) {
       return Notiflix.Notify.info('Невірний ТТН. Має бути 14 символів');
     }
-
     onSubmit(inputNumber);
-    addNumber(inputNumber);
   };
 
   return (

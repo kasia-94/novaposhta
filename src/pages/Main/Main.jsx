@@ -61,7 +61,6 @@ export default function Main() {
       {error && Notiflix.Notify.failure(`${error.message}`)}
       <DeliveryForm
         onSubmit={handleSubmit}
-        addNumber={handleSubmit}
         valueHistoryList={valueHistoryList}
       />
       {status && <InfoBox status={status} />}
