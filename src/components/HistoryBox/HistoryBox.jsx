@@ -1,11 +1,19 @@
-export default function HistoryBox() {
+import { nanoid } from '@reduxjs/toolkit';
+
+export default function HistoryBox({ historyList, fetchInfo, clearList }) {
   return (
     <>
       <>Історія</>
       <ul>
-        <li>5962</li>
-        <li>5464</li>
-        <li>6116</li>
+        {historyList.map(item => {
+          const id = nanoid();
+          return (
+            <li key={id}>
+              <button onClick={() => fetchInfo(item)}>{item}</button>
+            </li>
+          );
+        })}
+        <button onClick={clearList}>Очистити</button>
       </ul>
     </>
   );
